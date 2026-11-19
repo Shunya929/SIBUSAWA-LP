@@ -469,18 +469,23 @@ button { background: none; border: 0; padding: 0; cursor: pointer; }
   .header .btn-sm {
     position: absolute;
     top: 40px;
-    right: 40px;
+    /* FVの枠（最大1440px・中央寄せ）の右端に揃える */
+    right: max(40px, calc((100vw - 1440px) / 2 + 40px));
+    padding: 12px 22px;
+    font-size: 13px;
   }
 
+  /* 1440pxを超える画面ではFV全体を1440px幅で中央に配置（左右は黒背景） */
   .fv {
     position: relative;
     flex-direction: row;
     min-height: 851px;
+    padding-inline: max(0px, calc((100vw - 1440px) / 2));
   }
   .fv__text {
     order: 1;
-    flex: 0 0 47.22%;
-    padding: 221px 56px 72px max(40px, calc((100vw - 1080px) / 2));
+    flex: 0 0 calc(min(100vw, 1440px) * .4722);
+    padding: 221px 56px 72px max(40px, calc((min(100vw, 1440px) - 1080px) / 2));
   }
   .fv__media {
     order: 2;
@@ -509,6 +514,14 @@ button { background: none; border: 0; padding: 0; cursor: pointer; }
   .fv__desc { font-size: 15px; }
   .fv-stats { padding-top: 10px; }
   .fv__tel { align-self: flex-start; }
+}
+
+@media (min-width: 1440px) {
+  .header .btn-sm {
+    padding: 16px 32px;
+    font-size: 15px;
+    letter-spacing: .1em;
+  }
 }
 
 /* =========================================================
