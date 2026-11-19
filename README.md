@@ -8,16 +8,26 @@ SIBUSAWA STYLE RC 収益不動産LP（静的コーディング版）。
 ## 構成
 
 ```
-index.html          LP本体
-thanks.html         フォーム送信後の完了画面
-assets/css/style.css
-assets/js/main.js   スライダー・フォームの最小限の制御
-assets/img/         Figmaから書き出した画像
+public/index.html          LP本体
+public/thanks.html         フォーム送信後の完了画面
+public/assets/css/style.css
+public/assets/js/main.js   スライダー・フォームの最小限の制御
+public/assets/img/         Figmaから書き出した画像
+src/index.js               Basic認証（Cloudflare Workers）
+wrangler.jsonc             Cloudflare Workersの設定
 ```
 
 ## 確認方法
 
-`index.html` をブラウザで開くだけで表示できます。
+`public/index.html` をブラウザで開くだけで表示できます。
+
+## 公開（Cloudflare Workers）
+
+`main` にpushすると自動でデプロイされます。Basic認証のID・パスワードは、
+Cloudflareの Settings → Variables and Secrets に Secret として登録します。
+
+- `BASIC_AUTH_USER`
+- `BASIC_AUTH_PASS`
 
 ## 未対応・要確認
 

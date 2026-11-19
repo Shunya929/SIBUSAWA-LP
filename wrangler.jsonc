@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sibusawa-lp",
+  "main": "src/index.js",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    // 静的ファイルを返す前に必ず src/index.js（Basic認証）を通す
+    "run_worker_first": true
+  },
+  // ダッシュボードで設定した変数をデプロイ時に消さない
+  "keep_vars": true
+}
