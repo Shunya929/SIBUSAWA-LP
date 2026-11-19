@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>送信完了｜SIBUSAWA STYLE RC</title>
+  <meta name="robots" content="noindex">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Great+Vibes&family=Noto+Sans+JP:wght@400;700&family=Shippori+Mincho:wght@500;600&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="header" style="position: static; padding: 16px var(--pad-x); background: var(--c-black);">
+  <a class="logo" href="./" aria-label="SIBUSAWA STYLE トップ" style="padding: 0;">
+    <span class="logo__script">Sibusawa Style</span>
+    <span class="logo__sub">SIBUSAWA STYLE</span>
+  </a>
+</header>
+
+<main class="sec sec--white thanks">
+  <div class="sec-head">
+    <p class="sec-head__en" aria-hidden="true">Thank you</p>
+    <h1 class="sec-head__ja">送信が完了しました</h1>
+  </div>
+
+  <!-- 資料請求のみの場合（デザイン「送信後の完了画面」） -->
+  <div class="thanks__box" id="thanks-document" hidden>
+    <p class="thanks__msg">資料をお送りしました。あなたの土地での収支も、無料相談会で試算できます。</p>
+    <a class="btn btn--dark" href="index.html#contact"><span class="btn__label">無料相談会も予約する</span><span class="btn__arrow" aria-hidden="true">→</span></a>
+  </div>
+
+  <!-- それ以外の場合（文言はデザイン未定のため仮） -->
+  <div class="thanks__box" id="thanks-default">
+    <p class="thanks__msg">お問い合わせありがとうございました。内容を確認のうえ、担当者よりご連絡いたします。[文言要確認]</p>
+    <a class="btn btn--outline" href="index.html"><span class="btn__label">トップへ戻る</span><span class="btn__arrow" aria-hidden="true">→</span></a>
+  </div>
+</main>
+
+<div class="fixed-cta">
+  <a class="fixed-cta__tel" href="tel:0272261550">
+    <span class="fixed-cta__label">電話番号</span>
+    <span class="fixed-cta__num">027-226-1550</span>
+  </a>
+</div>
+
+<script>
+  if (new URLSearchParams(location.search).get('type') === 'document') {
+    document.getElementById('thanks-document').hidden = false;
+    document.getElementById('thanks-default').hidden = true;
+  }
+</script>
+</body>
+</html>
